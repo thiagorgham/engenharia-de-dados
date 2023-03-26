@@ -1,0 +1,25 @@
+
+AWS - Amazon
+
+    -> RDS (Banco de Dados)
+        -> Ralational Database Service
+        -> Serviço de banco de dados relacional
+
+    -> S3 (Armazenamento)
+        -> Storage - Data Lake
+        -> Armazenamento de objetos
+
+    -> EMR (Processamento de Big Data)
+        -> Elastic Map Reduce (spark)
+        -> Para processar os dados 
+        -> python
+
+    -> DMS 
+        -> Database Migration Service
+        -> Le do data lake e salva em um banco de dados
+
+    -> Amazon Athena (Consumo de Dados)
+        -> Consulta SQL direto no data lake
+
+    -> Terraform
+        -> 
