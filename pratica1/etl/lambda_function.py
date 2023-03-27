@@ -11,7 +11,7 @@ def handler(event, context):
                 ServiceRole='EMR_DefaultRole',
                 JobFlowRole='EMR_EC2_DefaultRole',
                 VisibleToAllUsers=True,
-                LogUri='s3://terraform-enem/emr-logs',
+                LogUri='s3://terraform-workflow-enem/emr-logs', 
                 ReleaseLabel='emr-6.3.0',
                 Instances={
                     'InstanceGroups': [
@@ -93,7 +93,7 @@ def handler(event, context):
                                  '--conf', 'spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog', 
                                  '--master', 'yarn',
                                  '--deploy-mode', 'cluster',
-                                 's3://terraform-enem/emr-code/pyspark/01_delta_spark_insert.py'
+                                 's3://terraform-workflow-enem/emr-code/pyspark/01_delta_spark_insert.py'
                                  ]
                     }
                 },
@@ -108,7 +108,7 @@ def handler(event, context):
                                  '--conf', 'spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog', 
                                  '--master', 'yarn',
                                  '--deploy-mode', 'cluster',
-                                 's3://terraform-enem/emr-code/pyspark/02_delta_spark_upsert.py'
+                                 's3://terraform-workflow-enem/emr-code/pyspark/02_delta_spark_upsert.py'
                                  ]
                     }
                 }],
