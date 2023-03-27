@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dl" {
-  bucket = "terraform-bucket"
+  bucket = "terraform-enem"
   acl    = "private"
 
   server_side_encryption_configuration {
