@@ -4,10 +4,10 @@ def handler(event, context):
     """
     Lambda function that starts a job flow in EMR.
     """
-    client = boto3.client('emr', region_name='us-east-2')
+    client = boto3.client('emr', region_name='us-east-1')
 
     cluster_id = client.run_job_flow(
-                Name='EMR-Ney-IGTI-delta',
+                Name='Pratica-1',
                 ServiceRole='EMR_DefaultRole',
                 JobFlowRole='EMR_EC2_DefaultRole',
                 VisibleToAllUsers=True,
@@ -30,10 +30,10 @@ def handler(event, context):
                             'InstanceCount': 1,
                         }
                     ],
-                    'Ec2KeyName': 'ney-igti-teste',
+                    'Ec2KeyName': 'Pratica_1',
                     'KeepJobFlowAliveWhenNoSteps': True,
                     'TerminationProtected': False,
-                    'Ec2SubnetId': 'subnet-1df20360'
+                    'Ec2SubnetId': 'subnet-00939abcb1e7fe7a4'
                 },
 
                 Applications=[
