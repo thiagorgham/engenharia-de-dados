@@ -25,17 +25,17 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2
+        aws-region: us-east-1
 
     - name: Build Lambda package
       run: |
-        sh scripts/build_lambda_package.sh
+        sh pratica1/scripts/build_lambda_package.sh
 
     - name: IaC Apply
       env:
         COMMAND_IAC: terraform
       run: |
-        cd infrastructure
+        cd pratica1/infrastructure
         $COMMAND_IAC init
         $COMMAND_IAC validate
         $COMMAND_IAC plan

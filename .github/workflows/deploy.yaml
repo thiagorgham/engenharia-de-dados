@@ -29,13 +29,13 @@ jobs:
 
     - name: Build Lambda package
       run: |
-        sh scripts/build_lambda_package.sh
+        sh pratica1/scripts/build_lambda_package.sh
 
     - name: IaC Apply
       env:
         COMMAND_IAC: terraform
       run: |
-        cd infrastructure
+        cd pratica1/infrastructure
         $COMMAND_IAC init
         $COMMAND_IAC validate
         $COMMAND_IAC apply -auto-approve
