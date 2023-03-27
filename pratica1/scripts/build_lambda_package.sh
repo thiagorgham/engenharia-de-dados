@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-cd infrastructure
+cd infrastructure 
 
 # Declara variavel para reutilização nas validações do diretório
 PACKAGE="package"
@@ -37,8 +37,8 @@ cd $PACKAGE
 LAMBDA_FUNCTION=../../etl/lambda_function.py
 
 # Verifica se o arquivo lambda_function.py existe
-if [ -f $LAMBDA_FUNCTION ]
-then
+#if [ -f $LAMBDA_FUNCTION ]
+#then
 	echo "============================================="
 	echo "Copiando função Handler..."
 	cp $LAMBDA_FUNCTION .
@@ -46,6 +46,6 @@ then
 	zip -r9 ../lambda_function_payload.zip . #Compacta o pacote para o deploy
 	echo "Arquivo compactado com sucesso!"
 	echo "============================================="
-fi
+#fi
 
 cd ..
